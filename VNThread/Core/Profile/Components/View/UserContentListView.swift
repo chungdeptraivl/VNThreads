@@ -1,10 +1,3 @@
-//
-//  UserContentListVieww.swift
-//  VNThread
-//
-//  Created by Apple on 5/30/24.
-//
-
 import SwiftUI
 
 struct UserContentListView: View {
@@ -39,6 +32,7 @@ struct UserContentListView: View {
                     .onTapGesture {
                         withAnimation(.spring()) {
                             selectedFilter = filter
+                            Task { await fetchFilteredThreads() }
                         }
                     }
                 }
@@ -49,6 +43,20 @@ struct UserContentListView: View {
                     FeedCell(thread: thread)
                 }
             }
+        }
+    }
+    
+    @MainActor
+    private func fetchFilteredThreads() async {
+        do {
+            switch selectedFilter {
+            case .threads:
+                try await viewModel.fetchUserThreads()
+            case .likes:
+                try await viewModel.fetchLikedThreads()
+            }
+        } catch {
+            print("Error fetching threads: \(error.localizedDescription)")
         }
     }
 }

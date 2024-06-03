@@ -46,13 +46,13 @@ struct ProfileHeaderView: View {
                     .foregroundColor(.secondary)
             }
             
-            if let link = user?.link {
-                Link(destination: URL(string: link)!) {
-                    Text(link)
-                        .font(.footnote)
-                        .foregroundColor(.blue)
-                }
-            }
+//            if let link = user?.link {
+//                Link(destination: URL(string: link)!) {
+//                    Text(link)
+//                        .font(.footnote)
+//                        .foregroundColor(.blue)
+//                }
+//            }
             
             if !isCurrentUser && (user?.isPrivateProfile ?? false) {
                 Text("This account is private")

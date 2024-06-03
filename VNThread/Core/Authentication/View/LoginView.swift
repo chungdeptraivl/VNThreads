@@ -15,12 +15,11 @@ struct LoginView: View {
             
             
             VStack {
-                Spacer()
                 
-                Image("nike")
+                Image("think")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 120)
+                    .frame(width: 200)
                     .padding()
                 
                 VStack {
@@ -30,18 +29,6 @@ struct LoginView: View {
                     
                     SecureField("Password", text: $viewModel.password)
                         .modifier(ThreadTextFieldModifier())
-                }
-                
-                NavigationLink {
-                    Text("Forgot password?")
-                } label: {
-                    Text("Forgot Password?")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                        .padding(.top)
-                        .padding(.trailing, 28)
-                        .foregroundColor(.black)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 
                 Button {
@@ -54,6 +41,7 @@ struct LoginView: View {
                         .frame(width: 348, height: 44)
                         .background(.black)
                         .cornerRadius(8)
+                        .padding(.top)
                 }
                 
                 Spacer()

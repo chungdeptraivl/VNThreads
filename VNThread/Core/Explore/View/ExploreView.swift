@@ -11,20 +11,22 @@ struct ExploreView: View {
     @State private var searchText = ""
     @StateObject var viewModel = ExploreViewModel()
     
-    
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack {
-                    ForEach(viewModel.users) { user in
-                        NavigationLink(value: user) {
-                            VStack {
-                                
-                                UserCell(user: user)
-                                
-                                Divider()
+                    if viewModel.filteredUsers.isEmpty {
+                        Text("No results found") 
+                            .padding()
+                    } else {
+                        ForEach(viewModel.filteredUsers) { user in
+                            NavigationLink(value: user) {
+                                VStack {
+                                    UserCell(user: user)
+                                    Divider()
+                                }
+                                .padding(.vertical)
                             }
-                            .padding(.vertical)
                         }
                     }
                 }
@@ -32,9 +34,14 @@ struct ExploreView: View {
             .navigationDestination(for: User.self, destination:{ user in ProfileView(user: user)})
             .navigationTitle("Search")
             .searchable(text: $searchText, prompt: "Search ...")
+            .onChange(of: searchText) { newValue in
+                viewModel.filterUsers(with: newValue)
+            }
         }
     }
 }
+
+
 
 #Preview {
     ExploreView()

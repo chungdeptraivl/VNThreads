@@ -22,6 +22,10 @@
 		18127A172C08D53A005FD840 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18127A162C08D53A005FD840 /* FeedViewModel.swift */; };
 		18127A1B2C08DDE7005FD840 /* UserContentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18127A1A2C08DDE7005FD840 /* UserContentListViewModel.swift */; };
 		18127A1D2C08E126005FD840 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18127A1C2C08E126005FD840 /* Timestamp.swift */; };
+		18127A202C0910A2005FD840 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18127A1F2C0910A2005FD840 /* SplashView.swift */; };
+		18127A222C091ED7005FD840 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18127A212C091ED7005FD840 /* CommentService.swift */; };
+		18127A252C091F5C005FD840 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18127A242C091F5C005FD840 /* CommentView.swift */; };
+		18127A292C092122005FD840 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18127A282C092122005FD840 /* CommentViewModel.swift */; };
 		1825594E2C08373A004E64BB /* VNThreadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825594D2C08373A004E64BB /* VNThreadApp.swift */; };
 		182559502C08373A004E64BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825594F2C08373A004E64BB /* ContentView.swift */; };
 		182559522C08373E004E64BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182559512C08373E004E64BB /* Assets.xcassets */; };
@@ -68,6 +72,10 @@
 		18127A162C08D53A005FD840 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		18127A1A2C08DDE7005FD840 /* UserContentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentListViewModel.swift; sourceTree = "<group>"; };
 		18127A1C2C08E126005FD840 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
+		18127A1F2C0910A2005FD840 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		18127A212C091ED7005FD840 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		18127A242C091F5C005FD840 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		18127A282C092122005FD840 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		1825594A2C08373A004E64BB /* VNThread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VNThread.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1825594D2C08373A004E64BB /* VNThreadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNThreadApp.swift; sourceTree = "<group>"; };
 		1825594F2C08373A004E64BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -211,6 +219,39 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		18127A1E2C091092005FD840 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				18127A1F2C0910A2005FD840 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		18127A232C091F3F005FD840 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				18127A272C09210A005FD840 /* ViewModel */,
+				18127A262C092100005FD840 /* View */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		18127A262C092100005FD840 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18127A242C091F5C005FD840 /* CommentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18127A272C09210A005FD840 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18127A282C092122005FD840 /* CommentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		182559412C08373A004E64BB = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +303,8 @@
 		1825595C2C083778004E64BB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				18127A232C091F3F005FD840 /* Comments */,
+				18127A1E2C091092005FD840 /* Splash */,
 				182559812C084BA0004E64BB /* Components */,
 				1825597C2C0844CE004E64BB /* ThreadCreate */,
 				182559772C084455004E64BB /* Profile */,
@@ -327,6 +370,7 @@
 				182559A82C087047004E64BB /* UserService.swift */,
 				18127A082C08B944005FD840 /* ImageUploader.swift */,
 				18127A122C08CEE0005FD840 /* ThreadService.swift */,
+				18127A212C091ED7005FD840 /* CommentService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -576,6 +620,8 @@
 				181279F82C0887BF005FD840 /* PreviewProvider.swift in Sources */,
 				18127A1D2C08E126005FD840 /* Timestamp.swift in Sources */,
 				18127A092C08B944005FD840 /* ImageUploader.swift in Sources */,
+				18127A292C092122005FD840 /* CommentViewModel.swift in Sources */,
+				18127A202C0910A2005FD840 /* SplashView.swift in Sources */,
 				18127A072C089926005FD840 /* EditProfileViewModel.swift in Sources */,
 				1825598D2C0853B1004E64BB /* EditProfileView.swift in Sources */,
 				182559612C0837C7004E64BB /* LoginView.swift in Sources */,
@@ -584,6 +630,7 @@
 				1825594E2C08373A004E64BB /* VNThreadApp.swift in Sources */,
 				182559A52C086A97004E64BB /* LoginViewModel.swift in Sources */,
 				18127A1B2C08DDE7005FD840 /* UserContentListViewModel.swift in Sources */,
+				18127A222C091ED7005FD840 /* CommentService.swift in Sources */,
 				18127A112C08CE88005FD840 /* CreateThreadViewModel.swift in Sources */,
 				18127A022C088E92005FD840 /* ProfileHeaderView.swift in Sources */,
 				182559832C084BCF004E64BB /* CircularProfileImageView.swift in Sources */,
@@ -593,6 +640,7 @@
 				182559852C084C1D004E64BB /* UserCell.swift in Sources */,
 				181279FF2C088C87005FD840 /* CurrentUserProfileViewModel.swift in Sources */,
 				182559802C08464E004E64BB /* FeedCell.swift in Sources */,
+				18127A252C091F5C005FD840 /* CommentView.swift in Sources */,
 				18127A042C08908E005FD840 /* UserContentListView.swift in Sources */,
 				182559A32C086443004E64BB /* ContentViewModel.swift in Sources */,
 				1825597B2C084472004E64BB /* FeedView.swift in Sources */,

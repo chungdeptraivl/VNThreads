@@ -1,10 +1,3 @@
-//
-//  UserContentListViewModel.swift
-//  VNThread
-//
-//  Created by Apple on 5/30/24.
-//
-
 import Foundation
 
 class UserContentListViewModel: ObservableObject {
@@ -14,7 +7,7 @@ class UserContentListViewModel: ObservableObject {
     
     init(user: User) {
         self.user = user
-        Task { try await fetchUserThreads()}
+        Task { try await fetchUserThreads() }
     }
     
     @MainActor
@@ -26,5 +19,17 @@ class UserContentListViewModel: ObservableObject {
         }
         
         self.threads = threads
+    }
+    
+    @MainActor
+    func fetchLikedThreads() async throws {
+        var likedThreads = try await ThreadService.fetchLikedThreads(userId: user.id)
+        
+        for i in 0 ..< likedThreads.count {
+            let ownerUid = likedThreads[i].ownerUid
+            likedThreads[i].user = try await UserService.fetchUser(withUid: ownerUid)
+        }
+        
+        self.threads = likedThreads
     }
 }

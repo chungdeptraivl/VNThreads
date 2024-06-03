@@ -13,12 +13,10 @@ struct RegistrationView: View {
     
     var body: some View {
         VStack {
-            Spacer()
-            
-            Image("nike")
+            Image("think")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 120)
+                .frame(width: 200)
                 .padding()
             
             VStack {

@@ -25,16 +25,6 @@ struct FeedView: View {
             .navigationTitle("Threads")
             .navigationBarTitleDisplayMode(.inline)
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    
-                } label: {
-                    Image(systemName: "arrow.clockwise")
-                        .foregroundColor(.black)
-                }
-            }
-        }
     }
 }
 

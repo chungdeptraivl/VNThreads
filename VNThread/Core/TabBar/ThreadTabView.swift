@@ -12,6 +12,7 @@ struct ThreadTabView: View {
     @State private var showCreateThreadView = false
     
     var body: some View {
+        Divider()
         TabView(selection: $selectedTab) {
             
             FeedView()
@@ -30,7 +31,7 @@ struct ThreadTabView: View {
             
             Text("")
                 .tabItem {
-                    Image(systemName: "plus")
+                    Image(systemName: "plus.app.fill")
                 }
                 .onAppear {selectedTab = 2}
                 .tag(2)
